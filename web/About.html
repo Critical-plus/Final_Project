@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Anout us</title>
+    <script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        #main{
+            font-size: 30px;
+            text-align: center;
+        }
+        div{
+            margin-top: 30px;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
+        .id{
+            display: none;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $("#name0").click(function(){
+                $("#s0").slideToggle("slow");
+            });
+            $("#name1").click(function(){
+                $("#s1").slideToggle("slow");
+            });
+            $("#name2").click(function(){
+                $("#s2").slideToggle("slow");
+            });
+            $("#name3").click(function(){
+                $("#s3").slideToggle("slow");
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="main" style="background-color: rgba(229,204,160,0.3)">
+        <div id="name0">Lin Jialong</div>
+        <div id="s0" class="id">20191620310050<br>Forgot , Reset ,Forecast</div>
+        <div id="name1"> Qin Tengda</div>
+        <div id="s1" class="id">20191620310075<br>Home , Feedback , AboutUs</div>
+        <div id="name2"> Wu Yuxuan</div>
+        <div id="s2" class="id">20191620310129<br>Register , Maintable , Background , Six-dimensional</div>
+        <div id="name3"> Zhang Xiangkai</div>
+        <div id="s3" class="id">20191620310132<br>Login , Agreement , Mainsubjectranking</div>
+    </div>
+</body>
+</html>

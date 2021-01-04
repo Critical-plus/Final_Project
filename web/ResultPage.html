@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge，chrome=1">
+    <meta name="renderer" content="webkit">
+    <title>Result Page</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div style="text-align:center;clear:both;">
+    <script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+    <script src="/follow.js" type="text/javascript"></script>
+</div>
+<!--头部-->
+<div class="header">
+    Result
+    <a href="http://localhost:8035/LoginPage.html" class="a-access">
+        <button class="button type1">
+            返回
+        </button>
+    </a>
+</div>
+<!--主体-->
+<div class="main clearfix">
+    <div class="main-left">
+        <div class="border-container">
+            <div class="name-title">
+                成绩六维图
+            </div>
+            <div id="radar"></div>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+        <div class="border-container">
+            <div class="name-title">
+                未来文理科选择人数预测
+            </div>
+            <div id="graduateyear"></div>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+    </div>
+    <div class="main-middle">
+        <span class="top-left border-span"></span>
+        <span class="top-right border-span"></span>
+        <span class="bottom-left border-span"></span>
+        <span class="bottom-right border-span"></span>
+
+        <div class="border-container">
+            <ul class="teacher-pie clearfix">
+                <li>
+                    <div class="name-title">
+                        评价占比图（全科）
+                    </div>
+                    <div id="courserate"></div>
+                </li>
+                <li>
+                    <div class="name-title">
+                        评价占比图（主科）
+                    </div>
+                    <div id="professionrate"></div>
+                </li>
+            </ul>
+
+            <div class="name-title">
+                历史排名
+            </div>
+            <div id="changedetail"></div>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+    </div>
+    <div class="main-right">
+        <div class="border-container">
+            <div class="name-title">
+                主科排名表
+            </div>
+            <table class="table table-kingdargen">
+                <thead>
+                <tr>
+                    <th>姓名</th>
+                    <th>数学</th>
+                    <th>英语</th>
+                    <th>语文</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>小明</td>
+                    <td>126</td>
+                    <td>112</td>
+                    <td>142</td>
+
+                </tr>
+                <tr>
+                    <td>小红</td>
+                    <td>128</td>
+                    <td>112</td>
+                    <td>142</td>
+                </tr>
+                <tr>
+                    <td>小黑</td>
+                    <td>128</td>
+                    <td>112</td>
+                    <td>142</td>
+                </tr>
+                <tr>
+                    <td>小蓝</td>
+                    <td>128</td>
+                    <td>112</td>
+                    <td>124</td>
+                </tr>
+                <tr>
+                    <td>小紫</td>
+                    <td>125</td>
+                    <td>121</td>
+                    <td>124</td>
+                </tr>
+                </tbody>
+            </table>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+        <div class="border-container">
+            <div class="name-title">
+                综合排名表
+            </div>
+            <div id="juniorservice"></div>
+            <span class="top-left border-span"></span>
+            <span class="top-right border-span"></span>
+            <span class="bottom-left border-span"></span>
+            <span class="bottom-right border-span"></span>
+        </div>
+
+    </div>
+</div>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/echarts.min.js"></script>
+<script src="js/index.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+    body {
+        font-family: "Lato", sans-serif;
+        transition: background-color .5s;
+        overflow: hidden;
+}
+    iframe{
+        position: relative;
+        margin-top: 50px;
+        height: 600px;
+        width: 900px;
+        /*border-radius: 50px;*/
+    }
+    #bc{
+        position: absolute;
+        /*z-index: ;*/
+        margin-top: -10px;
+        margin-left: -10px;
+        background:url("http://localhost:8080/background.html") ;
+        height: 100%;
+        width: 100%;
+    }
+    #dbc{
+        overflow: hidden;
+    }
+/*侧边栏选择器*/
+.sidenav {
+    height: 88%;/*改过*/
+    width: 0; /*原始宽度*/
+    position: fixed;
+    /*z-index、top、left共同控制侧栏的悬浮（上方1，下方-1）*/
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /*background-color: #c6dde7;*/
+    overflow-x: hidden;
+    transition: 0.5s; /*侧栏延迟0.5s显示*/
+    padding-top: 60px;
+    border-radius:30px;/*新加*/
+    margin-left: 10px;
+    margin-top: 10px;
+    box-shadow: gray 5px 5px 5px;
+    border: solid black 4px;
+}
+ 
+/*侧边栏标签选择器*/
+.sidenav a {
+    padding: 8px 8px 8px 0px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 500;
+    color: black;
+    display: block;
+    transition: 0.3s; /*标签延迟0.3s显示*/
+    text-shadow: gray 5px 5px 3px ;
+}
+ 
+/*侧栏标签和关闭按钮光标的效果*/
+.sidenav a:hover, .offcanvas a:focus{
+    color: gray;
+}
+#s:hover, :focus{
+    color: gray;
+}
+ 
+/*侧栏和关闭按钮的位置*/
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+ 
+/*主体内容*/
+#main {
+    transition: margin-left 0.5s;/*主体内容延迟0.5s整体y右移动*/
+    padding: 16px;
+}
+ 
+/*当文档高度小于450px时，改变侧栏的padding属性和字体大小*/
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+    .mc{
+        position: relative;
+        margin-left:300px;
+        transition: 0.5s;
+    }
+</style>
+<script type="text/javascript">
+/*打开侧栏，修改侧栏宽度，主体左跨度、背景透明度*/
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+	    document.getElementById("main").style.marginLeft = "250px";
+	    document.getElementById("c").style.marginLeft = "170px";
+    	document.body.style.backgroundColor = "white";
+    }
+    /*关闭侧栏，恢复原始侧栏宽度，主体左跨度、背景透明度*/
+    function closeNav() {
+	document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("main").style.marginLeft= "0";
+	document.getElementById("c").style.marginLeft = "300px";
+	document.body.style.backgroundColor = "white";
+    }
+</script>
+
+</head>
+<body>
+    <div id="dbc"><iframe id="bc" src="background.html"></iframe></div>
+    <!--侧栏界面设计-->
+    <div id="mySidenav" class="sidenav">
+        <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+        <a href="http://localhost:8035/Forecast%20table.html">Grade</a>
+        <a href="#/About">About Us</a>
+        <a href="#/Feedback">Feedback</a>
+        <a href="#/Background">Background</a>
+        <a href="LoginPage.html">Back</a>
+    </div>
+     
+    <div id="main">
+      <span id="s" style="font-size:40px;cursor:pointer;position: fixed; text-shadow:5px 5px 3px gray " onclick="openNav()"  onmousedown="closeNav()">&#9776;</span>
+      <div id="c" class="mc"></div>
+    </div>
+    <script>
+        // 原理：就是锚点值页面不跳转 + 局部内容innerHTML内容替换
+        var div = document.getElementById("c");
+         // hashchange事件   URL上的部分锚点数据（#xxx）改变可以获取到这个事件   能够在url改变的同时不刷新
+         window.addEventListener("hashchange",function() {
+                 console.log(location.hash)
+                 // 根据不同的锚点值，做出不同的显示
+                if (location.hash === "#/Background") {
+                     div.innerHTML = "";
+                 }else if (location.hash === "#/About") {
+                     div.innerHTML = "<iframe src='About.html' name='A_bout' frameborder='0'></iframe>";
+                 }else if (location.hash === "#/Feedback") {
+                     div.innerHTML = "<iframe src='Feedback.html' name='F_eedback' frameborder='0'></iframe>";
+                 }
+             }
+         )
+        function of() {
+            document.getElementById("s").style.textShadow = "";
+        }
+        function ob() {
+            document.getElementById("s").style.textShadow = "4px 4px 3px gray";
+        }
+    </script>
+</body>
+</html>
